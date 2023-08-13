@@ -207,22 +207,36 @@ const ChartComponent = ({ width, height, data }) => {
         ];
     
 
+        const modalWidth = 300; // Adjust this width as needed
+        const modalHeight = 300; // Adjust this height as needed
+        const modalX = node.x + offsetX + 25;
+        const modalY = node.y + offsetY;
+     // Calculate maximum allowed positions to prevent going out of the screen
+     const maxLeft = window.innerWidth - modalWidth;
+     const maxTop = window.innerHeight - modalHeight;
+
+     // Adjust modal position if it's out of the screen
+     var adjustedX = Math.min(modalX, maxLeft);
+     const adjustedY = Math.min(modalY, maxTop);
+
+     if (modalX <= 200) {
+         adjustedX = modalX + 450
+     }
         return (
             <div
-                className="modalWrapper"
-                style={{
-                    position: 'absolute',
-                    left: `${node.x + offsetX + 45}px`,
-                    top: `${node.y + offsetY}px`,
-                    borderRadius: '5px',
-
-                    // width: '200px',
-                    height: 'auto',
-                    background: '#fff',
-                    border: '1px solid #ccc',
-                    padding: '10px',
-                    zIndex: 10,
-                }}>
+            className="modalWrapper"
+            style={{
+                position: 'absolute',
+                left: `${adjustedX}px`,
+                top: `${adjustedY}px`,
+                border: '1px solid #E3EFFF',
+                margin: 'auto',
+                height: 'auto',
+                background: '#fff',
+                borderRadius: '12px',
+                padding: '10px',
+                zIndex: 10,
+            }}>
                 <div
                     style={{
                         // position: 'absolute',

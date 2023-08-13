@@ -14,18 +14,19 @@
     width: 342px;
     /* height: 146px; */
     box-sizing: border-box;
-    background: #FEFFD9 0% 0% no-repeat padding-box;
+    background: #95C4F7 0% 0% no-repeat padding-box;
     border-radius: 12px;
     padding: 15px;
 }
 
 .list {
     margin-bottom: 8px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 0.3rem;
-    border-bottom: 1.5px solid #ffff;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     padding-bottom: 0.3rem;
+     border-bottom: 1.5px solid #ffff;
+     padding-left: 1rem;
 }
 
 
@@ -100,3 +101,5 @@ h3 {
   .link:hover {
     stroke-opacity: .5;
   }
+
+  
